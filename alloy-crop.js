@@ -11,7 +11,7 @@
         : window.Transform
 
     var AlloyCrop = function (option) {
-        this.renderTo = document.body;
+        this.renderTo = document.querySelector("#alloycropContainer");
         this.canvas = document.createElement("canvas");
         this.output = option.output;
         this.width = option.width;
@@ -126,22 +126,24 @@
                     if((cr.left + evt.deltaX <= boxOffX) && (cr.right + evt.deltaX - boxOffX >= self.width)){
                         self.img.translateX += evt.deltaX;  
                     }
-                    evt.preventDefault();
+                    //evt.preventDefault();
                 }
             }));
 
             this.alloyFingerList.push(new AlloyFinger(this.cancel_btn, {
                 touchStart:function(){
                     self.cancel_btn.style.backgroundColor = '#ffffff';
-                    self.cancel_btn.style.color = '#3B4152';
+                    self.cancel_btn.style.color = '#000000';
+                    self.cancel_btn.style.cssText += 'text-decoration: none';
                 },
                 tap: this._cancel.bind(this)
             }));
 
             this.alloyFingerList.push(new AlloyFinger(this.ok_btn, {
                 touchStart:function(){
-                    self.ok_btn.style.backgroundColor = '#2bcafd';
+                    self.ok_btn.style.backgroundColor = '#19B7C7';
                     self.ok_btn.style.color = '#ffffff';
+                    self.ok_btn.style.cssText += 'text-decoration: none';
                 },
                 tap: this._ok.bind(this)
             }));
@@ -149,7 +151,7 @@
             this.alloyFingerList.push(new AlloyFinger(document, {
                 touchEnd: function () {
                     self.cancel_btn.style.backgroundColor = '#ffffff';
-                    self.ok_btn.style.backgroundColor = '#2bcafd';
+                    self.ok_btn.style.backgroundColor = '#19B7C7';
                 }
             }));
 
@@ -244,7 +246,7 @@
                 bottom: "20px",
                 borderRadius: "2px",
                 color: "#ffffff",
-                backgroundColor: "#2bcafd"
+                backgroundColor: '#19B7C7'
 
             });
 
@@ -257,7 +259,7 @@
                 left: "50px",
                 bottom: "20px",
                 borderRadius: "2px",
-                color: "#3B4152",
+                color: '#000000',
                 backgroundColor: "#ffffff"
 
             });

@@ -126,7 +126,7 @@
                     if((cr.left + evt.deltaX <= boxOffX) && (cr.right + evt.deltaX - boxOffX >= self.width)){
                         self.img.translateX += evt.deltaX;  
                     }
-                    //evt.preventDefault();
+                    evt.preventDefault();
                 }
             }));
 

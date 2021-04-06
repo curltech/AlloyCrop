@@ -1,6 +1,6 @@
 {
-  "name": "alloycrop4curltech",
-  "version": "1.0.4-curltech",
+  "name": "alloycrop-curltech",
+  "version": "1.0.4",
   "description": "The best and tiny size mobile cropping component",
   "main": "alloy-crop.js",
   "scripts": {

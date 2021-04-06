@@ -7,8 +7,12 @@
         ? require('alloyfinger')
         : window.AlloyFinger
     var Transform = typeof require === 'function'
-        ? require('css3transform').default
+        ? require('css3transform')
         : window.Transform
+
+    if (typeof Transform !== 'function') {
+        Transform = Transform.default
+    }
 
     var AlloyCrop = function (option) {
         this.renderTo = document.querySelector("#alloycropContainer");
